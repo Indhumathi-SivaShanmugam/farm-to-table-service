@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  background: #fbd461;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+}
