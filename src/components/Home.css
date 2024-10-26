@@ -1,129 +1,188 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay, Pagination } from "swiper/modules";
-import bgImage from "../assets/table.jpg"; // Adjust path if needed
-import aboutImage from "../assets/bg.webp"; // Replace with your "About Us" image path
-import newsImage1 from "../assets/news1.jpg";
-import newsImage2 from "../assets/news2.jpg";
-import newsImage3 from "../assets/news3.jpg";
-import { useNavigate } from "react-router-dom";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "./Home.css"; // Import your custom CSS
+/* General Reset */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Fauna+One&display=swap');
 
-const Home = () => {
-  const navigate = useNavigate();
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  return (
-    <div
-      className="min-h-screen bg-cover bg-center"
-      style={{
-        backgroundImage: `url(${bgImage})`,
-        backgroundAttachment: "fixed",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
-      }}
-    >
-      {/* Navbar */}
-      <div className="navbar">
-        <h1 className="logo">🌱 Farm to Table</h1>
-        <nav className="flex space-x-4">
-          <button className="nav-button" onClick={() => navigate("/")}>
-            Home
-          </button>
-          <button className="nav-button" onClick={() => navigate("/news")}>
-            News
-          </button>
-          <button className="nav-button" onClick={() => navigate("/login")}>
-            Login
-          </button>
-        </nav>
-      </div>
+/* Apply Full Page Background to Body */
+body {
+    background-image: url('../assets/table.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Fauna One', serif; /* Softer, organic font style */
+}
 
-      {/* Welcome Section */}
-      <section className="welcome-section w-full text-center flex items-center justify-center min-h-screen">
-        <div className="welcome-content flex flex-col items-center">
-          <h2 className="text-6xl font-bold text-white drop-shadow-lg">
-            Welcome to Farm to Table Service!
-          </h2>
-          <p className="text-2xl text-white/90 mt-4 drop-shadow-md max-w-2xl mx-auto text-center">
-            Your one-stop platform to connect with farmers, distributors, and more!
-          </p>
-        </div>
-      </section>
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
 
-   {/* News Section */}
-<section className="news-section py-16 bg-white/90">
-  <h3 className="section-title text-green-800">Latest Agricultural News 📰</h3>
-  <Swiper
-    modules={[Navigation, Pagination, Autoplay]}
-    spaceBetween={20}
-    slidesPerView={1}
-    navigation
-    pagination={{ clickable: true }}
-    autoplay={{ delay: 3000 }}
-  >
-    {[
-  { title: "Crop Prices Surge", img: newsImage1 },
-  { title: "New Farming Techniques", img: newsImage2 },
-  { title: "Organic Farming Trends", img: newsImage3 },
-].map((news, index) => (
-  <SwiperSlide key={index}>
-    <div
-      className="news-card relative rounded-lg shadow-lg cursor-pointer overflow-hidden"
-      style={{
-        backgroundImage: `url(${news.img})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}
-      onClick={() => navigate("/news")}
-    >
-      {/* Overlay Content */}
-      <div className="overlay-content">
-        <p>Find out more about the latest trends in agriculture.</p>
-        <h4>{news.title}</h4>
-      </div>
-    </div>
-  </SwiperSlide>
-))}
+.logo {
+    font-size: 2rem;
+    font-weight: 800;
+    position: sticky;
+    color: #2f855a;
+}
 
+.nav-button {
+    margin: 0 12px;
+    padding: 12px 20px;
+    color: white;
+    background: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    font-size: 18px;
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
 
+.nav-button:hover {
+    color: #2f855a;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Welcome Section */
+.welcome-section {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    padding: 2rem;
+}
+
+.welcome-content h2 {
+    font-size: 4rem;
+    margin-bottom: 16px;
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+}
+
+.welcome-content p {
+    font-size: 1.5rem;
+    line-height: 1.8;
+}
+
+/* News Section */
+.news-section {
+    padding: 4rem ;
+    text-align: center;
+    background:rgba(255, 255, 255, 0.3);;
+}
+
+.news-section h3 {
+    font-size: 2.5rem;
     
-  </Swiper>
-</section>
-      {/* About Us Section */}
-      <section className="about-us-section py-16 bg-green-100">
-        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center">
-          <div className="about-text md:w-1/2 text-center md:text-left mb-6 md:mb-0">
-            <h3 className="text-5xl font-bold text-green-800 mb-4 leading-tight">
-              Who<br />we<br />are.
-            </h3>
-            <p className="text-lg text-gray-700 leading-relaxed max-w-md">
-              Farm to Table Service is committed to bridging the gap between farmers,
-              distributors, and retailers. Our platform empowers farmers to sell directly,
-              reduces middlemen interference, and ensures consumers receive fresh produce
-              at fair prices. By embracing technology and sustainability, we aim to create
-              a more connected and efficient supply chain in the agricultural sector.
-            </p>
-          </div>
-          <div className="about-image md:w-1/2 flex justify-center md:justify-start">
-            <img
-              src={aboutImage}
-              alt="About Us"
-              className="rounded-lg shadow-lg max-w-xs md:max-w-md"
-            />
-          </div>
-        </div>
-      </section>
+    color: #68d8a4;
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    margin-bottom: 24px;
+}
 
-      {/* Footer */}
-      <footer className="footer py-4 bg-green-800 text-center text-white">
-        © 2024 Farm to Table Service. All rights reserved.
-      </footer>
-    </div>
-  );
-};
+.news-card {
+    position:relative;
+    padding: 15rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    cursor: pointer;
+}
 
-export default Home;
+.news-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.news-card p {
+    font-size: 1rem;
+    margin-top: -0.5rem; /* Move it slightly above the title */
+    color: rgba(255, 255, 255, 0.9); /* Slightly translucent white */
+    padding: 0 1rem; /* Add some horizontal padding */
+    max-width: 90%;
+    text-align: center;
+}
+
+.news-card h4 {
+    font-size: 1.5rem;
+    margin-top:-0,5rem;
+    margin-bottom: 1rem;
+    color: #ffffff;
+}
+
+.news-card .overlay-content {
+    position: absolute;
+    top: 20%; /* Move the overlay content higher */
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center content horizontally */
+    text-align: center;
+    color: #ffffff;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for readability */
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+/* About Us Section */
+.about-us-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e6ffe6;
+    padding: 4rem 2rem;
+}
+
+.about-us-section h3 {
+    font-size: 3rem;
+    color: #2f855a;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.about-us-section p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    max-width: 600px;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.about-image {
+    max-width: 400px;
+    margin-top: 5rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer */
+.footer {
+    padding: 16px;
+    background-color: #2f855a;
+    color: white;
+    text-align: center;
+    font-size: 1rem;
+}
 
