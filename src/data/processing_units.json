@@ -1,0 +1,5 @@
+[{"Name":"Chennai Processing","Location":"Navalur,Chennai","Latitude":12.7526,"Longitude":80.1918,"Types Supported":"Drying, Grinding"},
+{"Name":"Chennai Processing 2","Location":"Porur,Chennai","Latitude":12.8438,"Longitude":80.2159,"Types Supported":"Roasting, Milling"},
+{"Name":"Chennai Processing 3","Location":"Siruseri,Chennai","Latitude":12.8239,"Longitude":80.227,"Types Supported":"Extracting, Canning"},
+{"Name":"Chennai Processing 4","Location":"Thiruporur,Chennai","Latitude":12.7848,"Longitude":80.2245,"Types Supported":"Grinding, Fermenting"},
+{"Name":"Chennai Processing 5","Location":"Kalavakkam,Chennai","Latitude":12.8113,"Longitude":80.2055,"Types Supported":"Drying, Extracting"}]
