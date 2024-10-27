@@ -168,8 +168,8 @@ body {
 /* About Us Section */
 .about-us-section {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row; /* Change to row for side-by-side layout */
+    align-items: flex-start; /* Align items to the top */
     background-color: #e6ffe6;
     padding: 4rem 2rem;
 }
@@ -180,25 +180,39 @@ body {
     font-family: 'Cinzel', serif;
     font-weight: 700;
     margin-bottom: 1rem;
+    text-align: left; /* Left-align the heading */
+}
+
+.about-us-section .container {
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    flex-direction: column; /* Keep content in a vertical stack */
+    width: 70%; /* Limit width to half of the page */
+    max-width: 600px; /* Optional: you can set a max-width to keep it neat */
+}
+
+.about-us-section .text-lg {
+    text-align: left; /* Left-align the paragraph text */
 }
 
 .about-us-section p {
     font-size: 1.2rem;
     color: #333;
     line-height: 1.8;
-    max-width: 600px;
-    text-align: center;
+    max-width: 100%; /* Allow full width for the paragraphs */
+    text-align: left; /* Left-align the paragraph text */
     margin-bottom: 2rem;
 }
-
-.about-image {
-    max-width: 400px;
-    margin-top: 5rem;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.fancy-quote {
+    font-size: 1.5rem; /* Adjust font size as needed */
+    font-style: italic; /* Italicize for emphasis */
+    color: #2f855a; /* Match the color with your theme */
+    border-left: 4px solid #2f855a; /* Add a left border for style */
+    padding-left: 1rem; /* Add some padding for spacing */
+    margin-top: 2rem; /* Add some space above the quote */
+    max-width: 100%; /* Ensure it doesn’t exceed the container */
+    text-align: left; /* Left-align the quote */
 }
-
 /* Footer */
 .footer {
     padding: 16px;
@@ -207,8 +221,3 @@ body {
     text-align: center;
     font-size: 1rem;
 }
-
-
-
-
-

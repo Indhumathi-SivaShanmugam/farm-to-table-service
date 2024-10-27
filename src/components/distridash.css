@@ -1,0 +1,186 @@
+/* Dashboard.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Fauna+One&display=swap');
+
+/* Background */
+body {
+    font-family: 'Fauna One', serif; /* Use Fauna One font */
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Soft gradient background */
+}
+
+/* Container styles */
+.container {
+    max-width: 1200px; /* Max width for the container */
+    margin: 0 auto; /* Center the container */
+    padding: 1rem; /* Padding */
+    background: white; /* White background for the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+/* Header styles */
+header {
+    background-color: #4CAF50; /* Green background */
+    border-radius: 10px; /* Rounded corners */
+    padding: 1rem; /* Padding */
+    display: flex; /* Flexbox for header layout */
+    align-items: center; /* Center items vertically */
+}
+
+header img {
+    height: 64px; /* Logo height */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 16px; /* Space between logo and text */
+}
+
+/* Panel styles */
+.panel {
+    border-radius: 10px; /* Rounded corners for panels */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 1rem; /* Padding inside the panel */
+    margin: 24px 0; /* Margin between panels */
+}
+
+h1, h5, h6, p {
+    color: #0e0d0d; /* Dark text color */
+    font-family: 'Cinzel', serif; /* Apply Cinzel font to headers */
+}
+
+h5, h6, p {
+    color: #0e0d0d;
+    font-family: 'Fauna One', sans-serif; /* Apply Fauna One to other text */
+}
+
+/* List styles */
+ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    color: #0e0d0d;
+    font-family: 'Fauna One', sans-serif; /* Remove padding */
+}
+
+li {
+    margin-bottom: 1rem;
+    color: #0e0d0d;
+    font-family: 'Fauna One', sans-serif; /* Space between list items */
+}
+
+/* Image styles */
+img {
+    border-radius: 8px; /* Rounded corners for images */
+    max-width: 100px; /* Limit the maximum width of images */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.panel img {
+    max-width: 50px; /* Adjust size for crop images */
+}
+
+/* Button styles */
+button {
+    padding: 10px 15px; /* Padding */
+    border-radius: 8px; /* Rounded corners */
+    border: none; /* Remove border */
+    font-weight: bold; /* Bold text */
+    font-family: 'Fauna One', serif; /* Ensure buttons use Fauna One */
+    background-color: #4CAF50; /* Default green background */
+    color: white; /* White text color */
+    transition: background-color 0.3s ease, transform 0.2s; /* Smooth transition */
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Raise button slightly on hover */
+}
+
+/* Form and input styles */
+.form-select,
+input[type="text"] {
+    padding: 0.5rem; /* Padding inside */
+    border-radius: 8px; /* Rounded corners */
+    border: 1px solid #ccc; /* Light border */
+    width: 100%; /* Full width */
+}
+
+/* Custom color classes */
+.bg-green-500 {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+}
+
+.bg-red-500 {
+    background-color: #f44336; /* Red background */
+    color: white; /* White text */
+}
+
+.bg-blue-500 {
+    background-color: #2196F3; /* Blue background */
+    color: white; /* White text */
+}
+
+.text-white {
+    color: white; /* White text */
+}
+
+/* Utility classes */
+.p-4 {
+    padding: 1rem; /* Padding utility class */
+}
+
+.mt-1 {
+    margin-top: 0.25rem; /* Margin utility class */
+}
+
+.mb-3 {
+    margin-bottom: 1rem; /* Margin bottom utility */
+}
+
+.ml-2 {
+    margin-left: 0.5rem; /* Margin left utility */
+}
+
+/* Flexbox utility classes */
+.flex {
+    display: flex; /* Flexbox utility */
+}
+
+.flex-col {
+    flex-direction: column; /* Flex column utility */
+}
+
+.flex-row {
+    flex-direction: row; /* Flex row utility */
+}
+
+.justify-between {
+    justify-content: space-between; /* Justify content utility */
+}
+
+.items-center {
+    align-items: center; /* Align items utility */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0.5rem; /* Less padding on smaller screens */
+    }
+}
+.accept-button {
+    background-color: #4CAF50; /* Green */
+    color: white; /* White text */
+}
+
+.reject-button {
+    background-color: #f44336; /* Red */
+    color: white; /* White text */
+}
+
+.accept-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.reject-button:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}

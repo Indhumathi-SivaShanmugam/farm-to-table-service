@@ -2,4 +2,5 @@
 {"Name":"Chennai Distributors 2","Location":"Kalavakkam,Chennai","Latitude":12.8438,"Longitude":80.2159,"Products Supported":"Groundnut, Sesame"},
 {"Name":"Chennai Distributors 3","Location":"Porur,Chennai","Latitude":12.8239,"Longitude":80.227,"Products Supported":"Rice, Turmeric"},
 {"Name":"Chennai Distributors 4","Location":"Thiruporur,Chennai","Latitude":12.7848,"Longitude":80.2245,"Products Supported":"Clove, Sugar"},
-{"Name":"Chennai Distributors 5","Location":"Navalur,Chennai","Latitude":12.8113,"Longitude":80.2055,"Products Supported":"Tea, Cardamom"}]
+{"Name":"Chennai Distributors 5","Location":"Navalur,Chennai","Latitude":12.8113,"Longitude":80.2055,"Products Supported":"Tea, Cardamom"},
+{"Name":"Chennai Distributor 6","Location":"Navalur,Chennai","Latitude":12.96719,"Longitude":80.21099,"Products Supported":"Rice, Cardamom"}]

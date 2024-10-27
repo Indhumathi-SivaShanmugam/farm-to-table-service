@@ -2,10 +2,9 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import bgImage from "../assets/table.jpg";
-import aboutImage from "../assets/bg.webp"; // Replace with your "About Us" image path
-import newsImage1 from "../assets/news1.jpeg";
-import predictionBgImage from "../assets/news3.jpeg"; // Background image for first slide
-import priceBgImage from "../assets/news2.jpeg"; // Background image for second slide
+import newsImage1 from "../assets/news1.jpg";
+import predictionBgImage from "../assets/news3.jpg"; // Background image for first slide
+import priceBgImage from "../assets/news2.jpg"; // Background image for second slide
 import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -113,7 +112,6 @@ const Home = () => {
         <h1 className="logo">🌱 Farm to Table</h1>
         <nav className="flex space-x-4">
           <button className="nav-button" onClick={() => navigate("/")}>Home</button>
-          <button className="nav-button" onClick={() => navigate("/news")}>News</button>
           <button className="nav-button" onClick={() => navigate("/login")}>Login</button>
         </nav>
       </div>
@@ -211,13 +209,53 @@ const Home = () => {
           </div>
           <div className="about-image md:w-1/2 flex justify-center md:justify-start">
             <img
-              src={aboutImage}
               alt="About Us"
               className="rounded-lg shadow-lg max-w-xs md:max-w-md"
             />
           </div>
         </div>
       </section>
+
+     
+   {/* About Us Section */}
+<section className="about-us-section py-16 bg-green-100">
+  <div className="container mx-auto px-6">
+    <h3 className="text-5xl font-bold text-green-800 mb-8 leading-tight">
+      Who we are.
+    </h3>
+    
+    <div className="text-lg text-gray-700 leading-relaxed space-y-6 max-w-4xl">
+      <p>
+        We are <strong>Farm to Table Service</strong>—a digital platform transforming the agricultural 
+        supply chain. Our mission is to connect farmers, distributors, storage facilities, 
+        processors, and retailers in a seamless system that eliminates middlemen and ensures 
+        fair value at every stage.
+      </p>
+      <p>
+        At Farm to Table, we believe agriculture deserves <strong>transparency, efficiency, and innovation</strong>. 
+        Through our platform, farmers receive real-time insights into market trends, helping 
+        them make better decisions. We also leverage machine learning to predict crop demand 
+        and provide tools for businesses to optimize the flow of goods.
+      </p>
+      <p>
+        We are committed to empowering every participant in the supply chain. Farmers gain 
+        data-backed insights for effective planning and pricing strategies. Distributors benefit 
+        from streamlined tracking of goods from farm to storage, reducing waste and delays. 
+        Retailers enjoy access to high-quality produce with full visibility on supply and pricing.
+      </p>
+      <p>
+        At our core, we are <strong>innovators, problem-solvers, and advocates for sustainable agriculture</strong>. 
+        Whether you grow the crops, move the goods, or bring them to market, we are here to make 
+        the journey from farm to table smarter, faster, and fairer for all.
+      </p>
+      <p>
+        Together, let’s build a future where technology supports agriculture and fosters a 
+        <strong>connected, efficient, and thriving ecosystem</strong>.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       {/* Footer */}
       <footer className="footer py-4 bg-green-800 text-center text-white">
@@ -227,8 +265,9 @@ const Home = () => {
   );
 };
 
-export default Home;
 
+
+export default Home;
 
 
 

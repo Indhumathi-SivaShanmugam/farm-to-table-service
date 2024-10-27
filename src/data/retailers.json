@@ -2,4 +2,6 @@
 {"Name":"Chennai Retailer 2","Location":"Thiruporur,Chennai","Latitude":12.8438,"Longitude":80.2159,"Products Sold":"Groundnut, Sesame"},
 {"Name":"Chennai Retailer 3","Location":"Kalavakkam,Chennai","Latitude":12.8239,"Longitude":80.227,"Products Sold":"Rice, Turmeric"},
 {"Name":"Chennai Retailer 4","Location":"Porur,Chennai","Latitude":12.7848,"Longitude":80.2245,"Products Sold":"Clove, Sugar"},
-{"Name":"Chennai Retailer 5","Location":"Navalur,Chennai","Latitude":12.8113,"Longitude":80.2055,"Products Sold":"Tea, Cardamom"}]
+{"Name":"Chennai Retailer 5","Location":"Navalur,Chennai","Latitude":12.8113,"Longitude":80.2055,"Products Sold":"Tea, Cardamom"},
+{"Name":"Chennai Retailer 6","Location":"Navalur,Chennai","Latitude":12.96719,"Longitude":80.21099,"Products Sold":"Rice, Cardamom"}]
+
