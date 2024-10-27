@@ -9,14 +9,15 @@
 
 /* Apply Full Page Background to Body */
 body {
-    background-image: url('../assets/table.jpg'); /* Single background for entire body */
-    background-size: cover; /* Ensure the background covers the entire page */
-    background-position: center; /* Keep image centered */
-    background-repeat: no-repeat; /* Prevent repetition */
-    background-attachment: fixed; /* Keeps the background fixed during scroll */
+    background-image: url('../assets/table.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     min-height: 100vh;
     width: 100%;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden;
+    font-family: 'Fauna One', serif;
 }
 
 /* Navbar */
@@ -25,8 +26,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 16px;
-    background: rgba(255, 255, 255, 0.1); /* Translucent background */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 10;
@@ -39,101 +40,184 @@ body {
 }
 
 .nav-button {
-    margin: 0 12px !important;
-    padding: 12px 20px !important;
-    background: none; /* No background */
-    background-color: transparent !important;
-    color: white !important;
-    border: 2px solid transparent !important;
-    cursor: pointer !important;
-    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
-    font-size: 18px !important;
-    border-radius: 8px !important;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
-    font-family: 'Cinzel', serif !important;
-    font-weight: 500 !important;
-    letter-spacing: 1px !important;
-    text-transform: uppercase !important; /* Uppercase text */
+    margin: 0 12px;
+    padding: 12px 20px;
+    color: white;
+    background: none;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    font-size: 18px;
+    border-radius: 8px;
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-transform: uppercase;
 }
 
 .nav-button:hover {
-    color: #2f855a !important; /* Change color on hover */
-    background-color: transparent !important;
-    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15) !important; /* Increase shadow on hover */
+    color: #2f855a;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 /* Welcome Section */
 .welcome-section {
-    height: 100vh; /* Increased height for better proportion */
+    height: 70vh;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Text shadow for readability */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
     padding: 2rem;
-    background: none; /* No separate background image here */
 }
 
 .welcome-content h2 {
     font-size: 4rem;
     margin-bottom: 16px;
-    font-family: 'Cinzel', serif !important;
-    font-weight: 500 !important;
-    letter-spacing: 1px !important;
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
 }
 
 .welcome-content p {
-    font-family: 'Fauna', serif !important;
     font-size: 1.5rem;
-    max-width: 100%;
     line-height: 1.8;
 }
 
 /* News Section */
 .news-section {
-    height:50vh;
-    padding: 4rem 0;
-    background: rgba(255, 255, 255, 0); /* Slight translucent background */
+    position: relative; /* Make this relative to position the overlay */
+    padding: 4rem;
     text-align: center;
+}
 
+.news-section .overlay {
+    position: absolute; /* Position the overlay */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Reduced brightness overlay */
+    z-index: 1; /* Place overlay below content but above background */
 }
 
 .news-section h3 {
-    font-size: 4rem;
-    margin-bottom: 16px;
-    font-family: 'Cinzel', serif !important;
-    font-weight: 500 !important;
-    letter-spacing: 1px !important;
     font-size: 2.5rem;
-    margin-bottom: 24px;
     color: #68d8a4;
+    font-family: 'Cinzel', serif;
+    font-weight: 500;
+    margin-bottom: 24px;
+    position: relative; /* Ensure h3 is above overlay */
+    z-index: 2;
 }
 
 .news-card {
-    height:50h;
-    background: white;
-    padding: 5rem;
+    position: relative;
+    width: 1000px; /* Define a smaller fixed width */
+    height: 500px; /* Define a smaller fixed height */
     border-radius: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added smooth transition for both transform and shadow */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    display: inline-block; /* To place cards side by side */
+    margin: 10px; /* Add space between cards */
+    position: relative; /* Position relative to ensure overlay functionality */
+    z-index: 2; /* Ensure card content appears above the overlay */
+}
+
+.news-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .news-card:hover {
-    transform: scale(1.05); /* Slight scale effect */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Shadow increases on hover */
-}
-/* Smooth transitions for buttons and cards */
-.nav-button, .news-card {
-    transition: all 0.3s ease; /* Apply smooth transition to all properties */
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
+.news-card .overlay-content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent overlay */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1.5;
+    font-size: 1.5rem;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
 
+.news-card h4 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+/* About Us Section */
+.about-us-section {
+    display: flex;
+    flex-direction: row; /* Change to row for side-by-side layout */
+    align-items: flex-start; /* Align items to the top */
+    background-color: #e6ffe6;
+    padding: 4rem 2rem;
+}
+
+.about-us-section h3 {
+    font-size: 3rem;
+    color: #2f855a;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: left; /* Left-align the heading */
+}
+
+.about-us-section .container {
+    display: flex;
+    justify-content: flex-start; /* Align content to the left */
+    flex-direction: column; /* Keep content in a vertical stack */
+    width: 70%; /* Limit width to half of the page */
+    max-width: 600px; /* Optional: you can set a max-width to keep it neat */
+}
+
+.about-us-section .text-lg {
+    text-align: left; /* Left-align the paragraph text */
+}
+
+.about-us-section p {
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    max-width: 100%; /* Allow full width for the paragraphs */
+    text-align: left; /* Left-align the paragraph text */
+    margin-bottom: 2rem;
+}
+.fancy-quote {
+    font-size: 1.5rem; /* Adjust font size as needed */
+    font-style: italic; /* Italicize for emphasis */
+    color: #2f855a; /* Match the color with your theme */
+    border-left: 4px solid #2f855a; /* Add a left border for style */
+    padding-left: 1rem; /* Add some padding for spacing */
+    margin-top: 2rem; /* Add some space above the quote */
+    max-width: 100%; /* Ensure it doesn’t exceed the container */
+    text-align: left; /* Left-align the quote */
+}
 /* Footer */
 .footer {
     padding: 16px;
-    background-color: #2f855a; /* Footer background color */
+    background-color: #2f855a;
     color: white;
     text-align: center;
+    font-size: 1rem;
 }
-

@@ -1,0 +1,174 @@
+/* Dashboard.css */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Fauna+One&display=swap');
+
+/* Background */
+body {
+    font-family: 'Fauna One', serif; /* Change font to Fauna One */
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2); /* Soft gradient background */
+}
+
+/* Container and other styles remain the same */
+.container {
+    max-width: 1200px; /* Set a maximum width for the container */
+    margin: 0 auto; /* Center the container */
+    padding: 1rem; /* Add padding */
+    background: white; /* White background for the container */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+header {
+    background-color: #4CAF50; /* A nice green color */
+    border-radius: 10px; /* Rounded corners */
+    padding: 1rem; /* Padding for the header */
+}
+
+.panel {
+    border-radius: 10px; /* Rounded corners for panels */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for panels */
+    padding: 1rem; /* Padding inside the panel */
+}
+
+h1, h5 {
+    color: #333; /* Dark text color for headers */
+    font-family: 'Cinzel', serif; /* Apply Cinzel font to headers */
+}
+
+h5 {
+    border-bottom: 2px solid #4CAF50; /* Green underline for section headers */
+    padding-bottom: 0.5rem; /* Padding below headers */
+}
+
+ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0; /* Remove padding */
+}
+
+li {
+    margin-bottom: 1rem; /* Space between list items */
+}
+
+img {
+    border-radius: 8px; /* Rounded corners for images */
+    max-width: 100px; /* Limit the maximum width of images */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Specific image sizes for crop images */
+.panel img {
+    max-width: 50px; /* Adjust the size for crop images */
+    height: auto; /* Maintain aspect ratio */
+}
+
+button {
+    transition: background-color 0.3s ease, transform 0.2s; /* Smooth transition for button hover */
+    padding: 10px 15px; /* Padding for buttons */
+    border-radius: 8px; /* Rounded corners */
+    border: none; /* Remove border */
+    font-weight: bold; /* Bold text */
+    font-family: 'Fauna One', serif; /* Ensure buttons use the Fauna One font */
+}
+
+button:hover {
+    opacity: 0.9; /* Slight fade on hover */
+    transform: translateY(-2px); /* Raise button slightly on hover */
+}
+
+.form-select {
+    padding: 0.5rem; /* Padding inside select box */
+    border-radius: 8px; /* Rounded corners for select */
+    border: 1px solid #ccc; /* Light border */
+}
+
+input[type="text"] {
+    padding: 0.5rem; /* Padding inside text input */
+    border-radius: 8px; /* Rounded corners for input */
+    border: 1px solid #ccc; /* Light border */
+}
+
+.bg-green-500 {
+    background-color: #4CAF50; /* Custom green background */
+    color: white; /* White text color */
+}
+
+.bg-red-500 {
+    background-color: #f44336; /* Custom red background */
+    color: white; /* White text color */
+}
+
+.bg-blue-500 {
+    background-color: #2196F3; /* Custom blue background */
+    color: white; /* White text color */
+}
+
+.text-white {
+    color: white; /* White text color */
+}
+
+.p-4 {
+    padding: 1rem; /* Padding utility class */
+}
+
+.mt-1 {
+    margin-top: 0.25rem; /* Margin utility class */
+}
+
+.rounded-lg {
+    border-radius: 8px; /* Large rounded corners utility */
+}
+
+.shadow {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
+}
+
+.mb-3 {
+    margin-bottom: 1rem; /* Margin bottom utility */
+}
+
+.ml-2 {
+    margin-left: 0.5rem; /* Margin left utility */
+}
+
+.flex {
+    display: flex; /* Flexbox utility */
+}
+
+.flex-col {
+    flex-direction: column; /* Flex column utility */
+}
+
+.flex-row {
+    flex-direction: row; /* Flex row utility */
+}
+
+.justify-between {
+    justify-content: space-between; /* Justify content utility */
+}
+
+.items-center {
+    align-items: center; /* Align items utility */
+}
+
+/* Button styles for action buttons */
+.action-button, .search-button {
+    background-color: #4CAF50; /* Default green background */
+    color: white; /* White text color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 0.5rem 1rem; /* Padding for buttons */
+    margin-left: 10px; /* Left margin */
+    transition: background-color 0.3s ease, transform 0.2s; /* Transition for hover effects */
+}
+
+.action-button:hover, .search-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight raise on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 0.5rem; /* Less padding on smaller screens */
+    }
+}
