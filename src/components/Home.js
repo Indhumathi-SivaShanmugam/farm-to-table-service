@@ -2,6 +2,7 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import bgImage from "../assets/table.jpg";
+import aboutImage from "../assets/bg.webp"; // Replace with your "About Us" image path
 import newsImage1 from "../assets/news1.jpeg";
 import predictionBgImage from "../assets/news3.jpeg"; // Background image for first slide
 import priceBgImage from "../assets/news2.jpeg"; // Background image for second slide
@@ -193,10 +194,35 @@ const Home = () => {
 
         </Swiper>
       </section>
+      {/* About Us Section */}
+      <section className="about-us-section py-16 bg-green-100">
+        <div className="container mx-auto px-6 flex flex-col md:flex-row items-center">
+          <div className="about-text md:w-1/2 text-center md:text-left mb-6 md:mb-0">
+            <h3 className="text-5xl font-bold text-green-800 mb-4 leading-tight">
+              Who<br />we<br />are.
+            </h3>
+            <p className="text-lg text-gray-700 leading-relaxed max-w-md">
+              Farm to Table Service is committed to bridging the gap between farmers,
+              distributors, and retailers. Our platform empowers farmers to sell directly,
+              reduces middlemen interference, and ensures consumers receive fresh produce
+              at fair prices. By embracing technology and sustainability, we aim to create
+              a more connected and efficient supply chain in the agricultural sector.
+            </p>
+          </div>
+          <div className="about-image md:w-1/2 flex justify-center md:justify-start">
+            <img
+              src={aboutImage}
+              alt="About Us"
+              className="rounded-lg shadow-lg max-w-xs md:max-w-md"
+            />
+          </div>
+        </div>
+      </section>
 
-      {/* About Us and Footer Sections */}
-      {/* (Keep About Us and Footer as they were) */}
-      
+      {/* Footer */}
+      <footer className="footer py-4 bg-green-800 text-center text-white">
+        © 2024 Farm to Table Service. All rights reserved.
+      </footer>
     </div>
   );
 };
