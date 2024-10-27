@@ -3,8 +3,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import bgImage from "../assets/table.jpg";
 import newsImage1 from "../assets/news1.jpeg";
-import predictionBgImage from "../assets/news3.jpeg"; // Add background image for first slide
-import priceBgImage from "../assets/news2.jpeg"; // Add background image for second slide
+import predictionBgImage from "../assets/news3.jpeg"; // Background image for first slide
+import priceBgImage from "../assets/news2.jpeg"; // Background image for second slide
 import { useNavigate } from "react-router-dom";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -13,10 +13,27 @@ import "./Home.css";
 import locationData from '../data/crop_data.json';
 import priceData from '../data/market_price_data.json';
 
+// Add your crop yield dataset
+const yieldData = [
+  { Location: "Chennai", Season: "Winter", Crop: "Rice", Yield: 4 },
+  { Location: "Chennai", Season: "Summer", Crop: "Rice", Yield: 2.8 },
+  { Location: "Chennai", Season: "Monsoon", Crop: "Rice", Yield: 3.7 },
+  { Location: "Chennai", Season: "Post-Monsoon", Crop: "Rice", Yield: 3.5 },
+  { Location: "Chennai", Season: "Winter", Crop: "Turmeric", Yield: 2.5 },
+  { Location: "Chennai", Season: "Summer", Crop: "Turmeric", Yield: 1.6 },
+  { Location: "Chennai", Season: "Monsoon", Crop: "Turmeric", Yield: 2.2 },
+  { Location: "Chennai", Season: "Post-Monsoon", Crop: "Turmeric", Yield: 2.8 },
+  { Location: "Chennai", Season: "Winter", Crop: "Cardamom", Yield: 3.2 },
+  { Location: "Chennai", Season: "Summer", Crop: "Cardamom", Yield: 1.9 },
+  { Location: "Chennai", Season: "Monsoon", Crop: "Cardamom", Yield: 2.6 },
+  { Location: "Chennai", Season: "Post-Monsoon", Crop: "Cardamom", Yield: 2.9 },
+];
+
 const Home = () => {
   const navigate = useNavigate();
   const [predictionMessage, setPredictionMessage] = useState("");
   const [pricePrediction, setPricePrediction] = useState("");
+  const [cropYield, setCropYield] = useState(""); // State for crop yield
   const [locationGranted, setLocationGranted] = useState(false);
 
   const predictPrice = useCallback((crop, season) => {
@@ -31,6 +48,15 @@ const Home = () => {
     }
   }, []);
 
+  const predictYield = (crop, season) => {
+    const foundYield = yieldData.find(data => data.Crop === crop && data.Season === season);
+    if (foundYield) {
+      setCropYield(`The predicted yield for ${crop} in ${season} is ${foundYield.Yield} tons per hectare.`);
+    } else {
+      setCropYield("Yield data is not available for the selected crop and season.");
+    }
+  };
+
   const predictSeasonAndCrop = useCallback((latitude, longitude) => {
     const threshold = 0.01;
     const found = locationData.find(data =>
@@ -41,6 +67,7 @@ const Home = () => {
     if (found) {
       setPredictionMessage(`In your area, it's the ${found.Season} season, and the prominent crop is ${found.Crop}.`);
       predictPrice(found.Crop, found.Season);
+      predictYield(found.Crop, found.Season); // Call predictYield
     } else {
       setPredictionMessage("Location data not found for your coordinates.");
     }
@@ -145,7 +172,7 @@ const Home = () => {
             </div>
           </SwiperSlide>
 
-          {/* General News Slide */}
+          {/* Yield Prediction Slide */}
           <SwiperSlide>
             <div className="news-card relative rounded-lg shadow-lg overflow-hidden brightness-filter"
               style={{
@@ -153,12 +180,13 @@ const Home = () => {
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}
-              onClick={() => navigate("/news")}
             >
               <div className="overlay-content">
                 <div className="overlay"></div>
-                <p>Stay informed with updates from the farming industry.</p>
-                <h4>Market Insights</h4>
+                <h4 className="text-3xl font-bold">{cropYield}</h4>
+                <p className="text-xl mt-2">
+                  Learn about expected yields based on your location and crop choice!
+                </p>
               </div>
             </div>
           </SwiperSlide>
@@ -174,6 +202,7 @@ const Home = () => {
 };
 
 export default Home;
+
 
 
 
